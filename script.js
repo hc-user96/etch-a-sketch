@@ -1,10 +1,14 @@
 let container = document.querySelector("#container");
 
+// Set up 16x16 grid of squares
 for (let i = 0; i < 16; i++) {
-    innerContainer = document.createElement("div");
+    let innerContainer = document.createElement("div");
     container.appendChild(innerContainer);
-    
+
     for (let j = 0; j < 16; j++) {
-        innerContainer.appendChild(document.createElement("div"));
+        let square = document.createElement("div");
+        square.classList.add("squares");
+        innerContainer.appendChild(square);
     }
 }
+
