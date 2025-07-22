@@ -4,7 +4,9 @@ createSquaredGrid();
 
 let squares = document.querySelectorAll(".squares");
 squares.forEach(square => {
-    square.addEventListener("")
+    square.addEventListener("mouseout", (e) => {
+        square.classList.add("hover");
+    })
 })
 
 function createSquaredGrid() {
