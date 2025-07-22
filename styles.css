@@ -1,0 +1,10 @@
+#container {
+    display: flex;
+}
+
+#container * {
+    background-color: cadetblue;
+    height: 3rem;
+    width: 3rem;
+    margin: 0.1rem;
+}
