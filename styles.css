@@ -1,5 +1,17 @@
+#button-container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#reset {
+    border-radius: 1rem;
+    font-size: 2rem;
+}
+
 #container {
     display: flex;
+    justify-content: center;
 }
 
 .squares {
