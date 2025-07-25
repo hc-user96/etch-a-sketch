@@ -22,8 +22,11 @@ function resetGrid() {
     squares = [];
     iContainers = [];
     
-    let newSize = prompt("How big is your grid?");
-    
+    let newSize;
+    do {
+        newSize = prompt("How big is your grid?");
+    } while (newSize > 100)
+
     createSquareGrid(newSize);
 }
 
