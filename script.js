@@ -1,23 +1,27 @@
 let container = document.querySelector("#container");
 let reset = document.querySelector("#reset-button");
 let squares = [];
+let iContainers = [];
 const INITIALSIZE = 16;
 
 
 createSquareGrid(INITIALSIZE);
 
+reset.addEventListener("click", resetGrid);
+
 squares.forEach(square => {
     square.addEventListener("mouseover", () => changeColor(square));
 });
-// eventlistener("click", resetGrid())
-reset.addEventListener("click", resetGrid);
+
 
 
 function resetGrid() {
-    squares.forEach(square => square.remove());
-    // ask for size of new grid
+    squares.forEach(item => item.remove());
+    iContainers.forEach(item => item.remove());
+    
     let newSize = prompt("How big is your grid?");
-    // createSquareGrid(newSize)
+    
+    createSquareGrid(newSize);
 }
 
 function changeColor(item) {
@@ -29,6 +33,7 @@ function createSquareGrid(size) {
         let iContainer = document.createElement("div");
         iContainer.classList.add("inner-container");
         container.appendChild(iContainer);
+        iContainers.push(iContainer);
 
         for (let j = 0; j < size; j++) {
             let square = document.createElement("div");
