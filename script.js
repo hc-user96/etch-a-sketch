@@ -9,15 +9,18 @@ createSquareGrid(INITIALSIZE);
 
 reset.addEventListener("click", resetGrid);
 
-squares.forEach(square => {
-    square.addEventListener("mouseover", () => changeColor(square));
+container.addEventListener("mouseover", function(event) {
+    if (event.target.classList.contains("squares")) {
+        changeColor(event.target);
+    }
 });
-
 
 
 function resetGrid() {
     squares.forEach(item => item.remove());
     iContainers.forEach(item => item.remove());
+    squares = [];
+    iContainers = [];
     
     let newSize = prompt("How big is your grid?");
     
