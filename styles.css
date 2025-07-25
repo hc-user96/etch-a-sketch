@@ -4,21 +4,29 @@
     padding: 1rem;
 }
 
-#reset {
+#reset-button {
     border-radius: 1rem;
     font-size: 2rem;
 }
 
 #container {
+    width: 55rem;;
+    height: 55rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    flex-grow: 1;
+}
+
+.inner-container {
+    display: flex;
+    flex-grow: 1;
 }
 
 .squares {
     background-color: cadetblue;
-    height: 3rem;
-    width: 3rem;
     margin: 0.1rem;
+    flex-grow: 1;
 }
 
 .hover {
