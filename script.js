@@ -1,18 +1,22 @@
 let container = document.querySelector("#container")
+let squares = []
+const INITIALSIZE = 16;
 
 
-// createSquareGrid(16x16)
-createSquareGrid(2);
-// eventListener("hover", changeColor())
+createSquareGrid(INITIALSIZE);
 
+squares.forEach(square => {
+    square.addEventListener("mouseover", () => changeColor(square));
+});
 // eventlistener("click", resetGrid())
 
 
 // FUNCTION resetGrid()
 
-// FUNCTION changeColor()
+function changeColor(item) {
+    item.classList.add("hover");
+}
 
-// FUNCTION createSquareGrid(size) 
 function createSquareGrid(size) {
     for (let i = 0; i < size; i++) {
         let iContainer = document.createElement("div");
@@ -23,6 +27,7 @@ function createSquareGrid(size) {
             let square = document.createElement("div");
             square.classList.add("squares");
             iContainer.appendChild(square);
+            squares.push(square);
         }
     }
 }
